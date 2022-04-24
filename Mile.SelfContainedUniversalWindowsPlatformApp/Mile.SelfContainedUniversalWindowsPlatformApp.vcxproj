@@ -138,9 +138,9 @@
   <!-- ## END HACK - Put all output files to the AppX root folder ## -->
   <!-- ## BEGIN HACK - Removing Microsoft.VCLibs Packages ## -->
   <!--
-    Reference: https://github.com/microsoft/terminal
-               /blob/a89c3e2f8527a51b39768980627ed8f7c1ea5f0b
-               /src/cascadia/CascadiaPackage/CascadiaPackage.wapproj#L125
+    Reference: https://github.com/MicrosoftDocs/windows-uwp
+               /blob/13ba8b2bcc82ae92dafdbbdfa21d4ac1ae713f09/hub/apps
+               /windows-app-sdk/preview-channel.md#self-contained-deployment
   -->
   <!-- 
     For our builds, we're just using VC-LTL to compile the project and delete
@@ -150,22 +150,15 @@
     deployable everywhere.
   -->
   <!--
-    This target removes the FrameworkSdkReferences from before the AppX package
-    targets manifest generation happens. This is part of the generic machinery 
-    that applies to every AppX. 
+    This target removes the FrameworkSdkPackages from before the manifest 
+    generation happens. 
   -->
-  <Target Name="NanaZipStripAllDependenciesFromPackageFirstManifest" BeforeTargets="_GenerateCurrentProjectAppxManifest">
+  <PropertyGroup>
+    <IncludeGetResolvedSDKReferences>true</IncludeGetResolvedSDKReferences>
+  </PropertyGroup>
+  <Target Name="_RemoveFrameworkReferences" BeforeTargets="_ConvertItems;_CalculateInputsForGenerateCurrentProjectAppxManifest">
     <ItemGroup>
       <FrameworkSdkReference Remove="@(FrameworkSdkReference)" />
-    </ItemGroup>
-  </Target>
-  <!--
-    This target removes the FrameworkSdkPackages from before the *desktop 
-    bridge* manifest generation happens. 
-  -->
-  <Target Name="NanaZipStripAllDependenciesFromPackageSecondManifest" BeforeTargets="_GenerateDesktopBridgeAppxManifest" DependsOnTargets="_ResolveVCLibDependencies">
-    <ItemGroup>
-      <FrameworkSdkPackage Remove="@(FrameworkSdkPackage)" />
     </ItemGroup>
   </Target>
   <!-- ## END HACK - Removing Microsoft.VCLibs Packages ## -->
