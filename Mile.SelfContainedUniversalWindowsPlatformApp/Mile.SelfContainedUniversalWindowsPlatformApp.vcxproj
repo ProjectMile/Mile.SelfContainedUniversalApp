@@ -107,35 +107,6 @@
     </Text>
   </ItemGroup>
   <Import Project="..\Mile.Cpp\Mile.Project\Mile.Project.targets" />
-  <!-- ## BEGIN HACK - Put all output files to the AppX root folder ## -->
-  <!--
-    Reference: https://github.com/microsoft/terminal
-               /blob/a89c3e2f8527a51b39768980627ed8f7c1ea5f0b
-               /src/cascadia/CascadiaPackage/CascadiaPackage.wapproj#L73
-  -->
-  <!-- 
-    For our builds, we want to put all output files to the AppX root folder for
-    simplifying the implementation.
-  -->
-  <Target Name="NanaZipStompSourceProjectForWapProject" BeforeTargets="_ConvertItems">
-    <ItemGroup>
-      <!--
-        Stomp all "SourceProject" values for all incoming dependencies to 
-        flatten the package. 
-      -->
-      <_TemporaryFilteredWapProjOutput Include="@(_FilteredNonWapProjProjectOutput)" />
-      <_FilteredNonWapProjProjectOutput Remove="@(_TemporaryFilteredWapProjOutput)" />
-      <_FilteredNonWapProjProjectOutput Include="@(_TemporaryFilteredWapProjOutput)">
-        <!--
-        Blank the SourceProject here to vend all files into the root of the
-        package.
-      -->
-        <SourceProject>
-        </SourceProject>
-      </_FilteredNonWapProjProjectOutput>
-    </ItemGroup>
-  </Target>
-  <!-- ## END HACK - Put all output files to the AppX root folder ## -->
   <!-- ## BEGIN HACK - Removing Microsoft.VCLibs Packages ## -->
   <!--
     Reference: https://github.com/MicrosoftDocs/windows-uwp
