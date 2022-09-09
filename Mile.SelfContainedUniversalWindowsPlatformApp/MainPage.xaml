@@ -7,7 +7,63 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-        <Button x:Name="myButton" Click="ClickHandler">Click Me</Button>
-    </StackPanel>
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="auto" />
+      <RowDefinition Height="auto" />
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+    <MenuBar Grid.Row="0">
+      <MenuBarItem Title="File">
+        <MenuBarItem.KeyboardAccelerators>
+          <KeyboardAccelerator Key="F" Modifiers="Control" />
+        </MenuBarItem.KeyboardAccelerators>
+      </MenuBarItem>
+      <MenuBarItem Title="Edit">
+        <MenuBarItem.KeyboardAccelerators>
+          <KeyboardAccelerator Key="E" Modifiers="Control" />
+        </MenuBarItem.KeyboardAccelerators>
+      </MenuBarItem>
+      <MenuBarItem Title="View">
+        <MenuBarItem.KeyboardAccelerators>
+          <KeyboardAccelerator Key="V" Modifiers="Control" />
+        </MenuBarItem.KeyboardAccelerators>
+      </MenuBarItem>
+      <MenuBarItem Title="Favourites">
+        <MenuBarItem.KeyboardAccelerators>
+          <KeyboardAccelerator Key="A" Modifiers="Control" />
+        </MenuBarItem.KeyboardAccelerators>
+      </MenuBarItem>
+      <MenuBarItem Title="Tools">
+        <MenuBarItem.KeyboardAccelerators>
+          <KeyboardAccelerator Key="T" Modifiers="Control" />
+        </MenuBarItem.KeyboardAccelerators>
+      </MenuBarItem>
+      <MenuBarItem Title="Help">
+        <MenuBarItem.KeyboardAccelerators>
+          <KeyboardAccelerator Key="H" Modifiers="Control" />
+        </MenuBarItem.KeyboardAccelerators>
+      </MenuBarItem>
+    </MenuBar>
+    <CommandBar
+      Grid.Row="1"
+      HorizontalAlignment="Left"
+      DefaultLabelPosition="Right" Background="Transparent">
+      <AppBarButton Icon="Add" Label="Add" />
+      <AppBarButton Icon="MoveToFolder" Label="Extract" />
+      <AppBarButton Icon="Accept" Label="Test" />
+      <AppBarButton Icon="Copy" Label="Copy" />
+      <AppBarButton Label="Move">
+        <AppBarButton.Content>
+          <TextBlock FontFamily="Segoe MDL2 Assets" Text="&#xE8C6;" />
+        </AppBarButton.Content>
+      </AppBarButton>
+      <AppBarButton Icon="Delete" Label="Delete" />
+      <AppBarButton Label="Info">
+        <AppBarButton.Content>
+          <TextBlock FontFamily="Segoe MDL2 Assets" Text="&#xE946;" />
+        </AppBarButton.Content>
+      </AppBarButton>
+    </CommandBar>
+  </Grid>
 </Page>
