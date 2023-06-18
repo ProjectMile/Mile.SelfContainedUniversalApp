@@ -40,9 +40,6 @@
     <None Include="PropertySheet.props" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="readme.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <Page Include="MainPage.xaml" />
   </ItemGroup>
   <ItemGroup>
