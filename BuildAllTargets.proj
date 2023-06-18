@@ -4,10 +4,10 @@
   xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Target Name="Restore">
     <ItemGroup>
-      <ProjectReference Include="$(MSBuildThisFileDirectory)Mile.SelfContainedUniversalWindowsPlatformApp.sln">
+      <ProjectReference Include="$(MSBuildThisFileDirectory)Mile.SelfContainedUwpApp.sln">
         <AdditionalProperties>Configuration=Debug;Platform=x86</AdditionalProperties>   
       </ProjectReference>
-      <ProjectReference Include="$(MSBuildThisFileDirectory)Mile.SelfContainedUniversalWindowsPlatformApp.sln">
+      <ProjectReference Include="$(MSBuildThisFileDirectory)Mile.SelfContainedUwpApp.sln">
         <AdditionalProperties>Configuration=Release;Platform=x86</AdditionalProperties>   
       </ProjectReference>
     </ItemGroup>
@@ -19,13 +19,13 @@
   </Target>
   <Target Name="Build">
     <MSBuild
-      Projects="$(MSBuildThisFileDirectory)Mile.SelfContainedUniversalWindowsPlatformApp.sln"
+      Projects="$(MSBuildThisFileDirectory)Mile.SelfContainedUwpApp.sln"
       Targets="Build"
       BuildInParallel="True"
       StopOnFirstFailure="True"
       Properties="PreferredToolArchitecture=x64;Configuration=Debug;Platform=x86" />
     <MSBuild
-      Projects="$(MSBuildThisFileDirectory)Mile.SelfContainedUniversalWindowsPlatformApp.sln"
+      Projects="$(MSBuildThisFileDirectory)Mile.SelfContainedUwpApp.sln"
       Targets="Build"
       BuildInParallel="True"
       StopOnFirstFailure="True"
