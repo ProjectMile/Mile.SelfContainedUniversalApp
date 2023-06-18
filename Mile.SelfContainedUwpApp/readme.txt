@@ -1,5 +1,5 @@
 ========================================================================
-    C++/WinRT Mile.SelfContainedUniversalWindowsPlatformApp Project Overview
+    C++/WinRT Mile.SelfContainedUwpApp Project Overview
 ========================================================================
 
 This project demonstrates how to get started writing XAML apps directly
