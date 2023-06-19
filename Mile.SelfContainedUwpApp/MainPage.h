@@ -6,7 +6,9 @@ namespace winrt::MileSelfContainedUniversalWindowsPlatformApp::implementation
 {
     struct MainPage : MainPageT<MainPage>
     {
-        MainPage();
+        MainPage() = default;
+
+        void InitializeComponent();
     };
 }
 
