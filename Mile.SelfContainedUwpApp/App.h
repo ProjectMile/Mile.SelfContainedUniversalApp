@@ -1,7 +1,7 @@
 ﻿#pragma once
 #include "App.xaml.g.h"
 
-namespace winrt::MileSelfContainedUniversalWindowsPlatformApp::implementation
+namespace winrt::MileSelfContainedUniversalApp::implementation
 {
     struct App : AppT<App>
     {

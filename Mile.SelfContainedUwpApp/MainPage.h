@@ -2,7 +2,7 @@
 
 #include "MainPage.g.h"
 
-namespace winrt::MileSelfContainedUniversalWindowsPlatformApp::implementation
+namespace winrt::MileSelfContainedUniversalApp::implementation
 {
     struct MainPage : MainPageT<MainPage>
     {
@@ -12,7 +12,7 @@ namespace winrt::MileSelfContainedUniversalWindowsPlatformApp::implementation
     };
 }
 
-namespace winrt::MileSelfContainedUniversalWindowsPlatformApp::factory_implementation
+namespace winrt::MileSelfContainedUniversalApp::factory_implementation
 {
     struct MainPage : MainPageT<MainPage, implementation::MainPage>
     {
